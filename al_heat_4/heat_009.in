@@ -1,0 +1,65 @@
+!Max variation: 0.4  0.18615746768191457
+&CONTROL
+restart_mode = 'from_scratch',
+calculation = "scf",
+etot_conv_thr = 1.0E-4,
+forc_conv_thr = 1.0D-3,
+nstep = 40,
+tprnfor = .true.,
+tstress = .true.,
+disk_io = 'low',
+prefix = "template",
+outdir = "/home/ben/espresso/scratch",
+pseudo_dir = "/home/ben/espresso/pp",
+/
+
+&SYSTEM
+ibrav = 0,
+celldm(1) = 7.63,
+nat = 4,
+ntyp = 4,
+ecutwfc = 35,
+ecutrho = 200,
+occupations = 'smearing',
+smearing = 'mv',
+degauss = 0.02,
+/
+
+&ELECTRONS
+mixing_beta = 3.0000000E-01,
+mixing_ndim = 10,
+diagonalization='david',
+mixing_mode = 'local-TF',
+conv_thr = 1.0D-6,
+/
+
+&IONS
+ion_dynamics='bfgs',
+/
+
+&CELL
+cell_dynamics='bfgs',
+press = 0.0,
+cell_factor = 2.0,
+/
+
+ATOMIC_SPECIES
+Al1   26.982   Al.pbe-nl-kjpaw_psl.1.0.0.UPF
+Al2   26.982   Al.pbe-nl-kjpaw_psl.1.0.0.UPF
+Al3   26.982   Al.pbe-nl-kjpaw_psl.1.0.0.UPF
+Al4   26.982   Al.pbe-nl-kjpaw_psl.1.0.0.UPF
+
+ATOMIC_POSITIONS crystal
+Al1 0.9987824639138445 0.0003542833183571909 0.0025348846821978805
+Al2 0.5029657593049245 0.49292155168570534 0.0026200632997261898
+Al3 0.4965399288789878 0.0011361488847087386 0.5110096045753122
+Al4 0.999254704361154 0.5081487625633117 0.5068440733143427
+
+K_POINTS automatic
+5 5 5    1 1 1
+
+CELL_PARAMETERS alat
+1.0  0.0  0.0
+0.0  1.0  0.0
+0.0  0.0  1.0
+
