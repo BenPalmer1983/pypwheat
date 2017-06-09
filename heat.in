@@ -1,0 +1,46 @@
+########################
+# Input file
+#
+########################
+
+## Directories
+##----------------------------------
+
+$tmpdir al_heat_4
+$outdir env
+$ppdir env
+
+
+
+## PWscf settings
+##----------------------------------
+
+## Use template
+#$pwtemplate Al4.in
+## Or build template
+$atomlist Al1 Al2 Al3 Al4
+$masslist 26.982 26.982 26.982 26.982
+$pplist Al.pbe-nl-kjpaw_psl.1.0.0.UPF Al.pbe-nl-kjpaw_psl.1.0.0.UPF Al.pbe-nl-kjpaw_psl.1.0.0.UPF Al.pbe-nl-kjpaw_psl.1.0.0.UPF
+$structure FCC   
+$alat 7.63
+$cell 1.0 0.0 0.0    0.0 1.0 0.0    0.0 0.0 1.0
+$copies 1
+$nspin 0               # 0, 2
+$mixing_mode local-TF  # TF, local-TF
+$ecutwfc 35            # 
+$ecutrho 200           # 
+$kpoints 5 5 5 1 1 1   # 
+$degauss 0.02          #
+
+
+
+## Heat settings 
+##----------------------------------  
+
+$calculations  20
+$maxvariation  0.4
+
+
+
+
+############################################################
